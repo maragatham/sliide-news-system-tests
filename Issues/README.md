@@ -13,8 +13,9 @@ User need to enter login details again to open the app
 ###### Expected Result:
 It should open the app directly.
 
-| Severity             | Major   |
+|                      |         |
 |----------------------|---------|
+| Severity             | Major   |
 | Priority             | High    |
 | Device               | Pixel 5 |
 | Android OS version   | 12      |
@@ -36,12 +37,14 @@ It should open the app directly.
 ###### Expected Result:
 It should have retry button in “Failed to load news” screen
 
-| Severity             | Major   |
+|                      |         |
 |----------------------|---------|
+| Severity             | Major   |
 | Priority             | High    |
 | Device               | Pixel 5 |
 | Android OS version   | 12      |
 | Reproducibility rate | 5/5     |
+
 
 
 
