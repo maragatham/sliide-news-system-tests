@@ -2,10 +2,15 @@ from unittest import TestCase
 from uiautomator import device as d
 
 class LoginTest(TestCase):
+    # Helper Methods
+    # --------------
+
+    # Enter Home Screen
     def refresh(self):
         d.press("home")
         d.press("back")
 
+    # Close last running application
     def closeapp(self):
         d.press.home()
         d.press.recent()
@@ -13,11 +18,13 @@ class LoginTest(TestCase):
         d.wait.update()
         d.press.home()
 
+    # Open News App
     def openapp(self):
         d.swipe(50, 1500, 50, 100, 10)
         d(text="News").click()
         d.wait.update()
 
+    # Enter and submit Creds
     def enter_credentials(self, uservalue, passwordvalue):
         txtUser = d().child(text="User name")
         txtUser.clear_text()
@@ -29,10 +36,17 @@ class LoginTest(TestCase):
         btnLogin.click()
         d.wait.update()
 
-    def test_first_time_login(self):
+    # Restart App
+    def freshStartApp(self):
         self.closeapp()
         self.refresh()
         self.openapp()
+
+    # Begin Tests
+    # -----------
+
+    def test_first_time_login(self):
+        self.freshStartApp()
         with self.subTest():
             self.assertTrue(d().child(text="LOGIN").exists)
         with self.subTest():
@@ -41,9 +55,7 @@ class LoginTest(TestCase):
             self.assertTrue(d().child(text="User name").exists)
 
     def test_invalid_credentials(self):
-        self.closeapp()
-        self.refresh()
-        self.openapp()
+        self.freshStartApp()
 
         # Enter correct credentials
         self.enter_credentials("invaliduser","invalidpassword")
@@ -52,9 +64,7 @@ class LoginTest(TestCase):
         self.assertTrue(d().child(text="LOGIN").exists)
 
     def test_valid_credentials(self):
-        self.closeapp()
-        self.refresh()
-        self.openapp()
+        self.freshStartApp()
 
         # Enter wrong credentials
         self.enter_credentials("user", "password")
@@ -62,11 +72,8 @@ class LoginTest(TestCase):
         # Check if we are not in Login screen
         self.assertFalse(d().child(text="LOGIN").exists)
 
-
     def test_open_app_next_time(self):
-        self.closeapp()
-        self.refresh()
-        self.openapp()
+        self.freshStartApp()
 
         # Check if we are not in Login screen
         self.assertFalse(d().child(text="LOGIN").exists)
