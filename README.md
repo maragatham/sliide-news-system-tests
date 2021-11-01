@@ -9,9 +9,9 @@ Automation tests uses [uiautomator](https://github.com/xiaocong/uiautomator) lib
 * [news_test.py](tests/system/news_test.py)
 
 ## Running Tests:
-###### Prerequisites
-Python 3
-Android SDK
+### Prerequisites
+* Python 3
+* Android SDK
 
 1. Connect an Android Device with the App installed from source app: https://github.com/sliide/technical_task_qa
 2. Clone this repository.  
