@@ -26,6 +26,6 @@ Automation tests uses [uiautomator](https://github.com/xiaocong/uiautomator) lib
 4. Install requirements and Excecute tests.
    ```bash
    pip install -r requirements.txt
-   python -m unittest tests/system
+   python -m unittest discover -s tests -p '*_test.py'
    ```
 
