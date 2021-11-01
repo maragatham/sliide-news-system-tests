@@ -13,7 +13,7 @@ Automation tests uses [uiautomator](https://github.com/xiaocong/uiautomator) lib
 * Python 3
 * Android SDK
 
-1. Connect an Android Device with the App installed from source app: https://github.com/sliide/technical_task_qa
+1. Connect an Android Device with the App installed from source: https://github.com/sliide/technical_task_qa
 2. Clone this repository.  
     ```bash
     git clone https://github.com/maragatham/sliide-news-system-tests
